@@ -11,8 +11,7 @@ def read_big_file1(fp, reg, size=102):
         if reg in temp:
             temp = temp.split(reg)
             temp, lines = temp[-1], temp[:-1]
-            for line in lines:
-                yield line
+            yield from lines
         if not read_str:
             yield temp
             break
